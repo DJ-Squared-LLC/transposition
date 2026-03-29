@@ -1,5 +1,3 @@
-using Transposition.Api.Models;
-
 namespace Transposition.Api.Models;
 
 /// <summary>Request body for submitting a resume for analysis.</summary>
