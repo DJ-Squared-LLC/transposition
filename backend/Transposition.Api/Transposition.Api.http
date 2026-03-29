@@ -1,0 +1,6 @@
+@Transposition.Api_HostAddress = http://localhost:5094
+
+GET {{Transposition.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
