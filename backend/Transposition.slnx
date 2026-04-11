@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Transposition.Api/Transposition.Api.csproj" />
+  <Project Path="Transposition.Tests/Transposition.Tests.csproj" />
+</Solution>
