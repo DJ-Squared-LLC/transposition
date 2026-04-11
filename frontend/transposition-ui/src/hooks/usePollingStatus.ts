@@ -9,6 +9,11 @@ export function usePollingStatus() {
   const [status, setStatus] = useState<AnalysisStatusResponse | null>(null);
   const [polling, setPolling] = useState(false);
 
+  const resetStatus = useCallback(() => {
+    setStatus(null);
+    setPolling(false);
+  }, []);
+
   const startPolling = useCallback((jobId: string) => {
     setPolling(true);
     let count = 0;
@@ -33,5 +38,5 @@ export function usePollingStatus() {
     }, POLL_INTERVAL_MS);
   }, []);
 
-  return { status, polling, startPolling };
+  return { status, polling, startPolling, resetStatus };
 }
