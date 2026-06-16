@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // ------------------------------------------------------------------
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 // In-memory job queue shared between controllers and the background worker.
 builder.Services.AddSingleton<IAnalysisJobQueue, InMemoryAnalysisJobQueue>();
@@ -34,6 +35,8 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 app.UseCors();
+app.UseSwagger();
+app.UseSwaggerUI();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
