@@ -26,7 +26,7 @@ function App() {
   const [jobRole, setJobRole] = useState<JobRole>({ ...EMPTY_JOB_ROLE });
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const { status, polling, startPolling } = usePollingStatus();
+  const { status, polling, startPolling, resetStatus } = usePollingStatus();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,6 +46,7 @@ function App() {
     setResume({ ...EMPTY_RESUME });
     setJobRole({ ...EMPTY_JOB_ROLE });
     setSubmitError(null);
+    resetStatus();
   };
 
   return (
